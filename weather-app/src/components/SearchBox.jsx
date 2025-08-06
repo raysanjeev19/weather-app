@@ -7,15 +7,29 @@ const SearchBox = ({ location, setLocation, onSearch }) => {
     }
   };
 
+  const handleButtonClick = () => {
+    onSearch();
+  };
+
   return (
     <div className="search">
-      <input
-        value={location}
-        onChange={(event) => setLocation(event.target.value)}
-        onKeyPress={handleKeyPress}
-        placeholder="Enter Location"
-        type="text"
-      />
+      <div className="search-container">
+        <input
+          value={location}
+          onChange={(event) => setLocation(event.target.value)}
+          onKeyPress={handleKeyPress}
+          placeholder="Enter Location"
+          type="text"
+          className="search-input"
+        />
+        <button 
+          onClick={handleButtonClick}
+          className="search-button"
+          disabled={!location.trim()}
+        >
+          Enter
+        </button>
+      </div>
     </div>
   );
 };
