@@ -36,7 +36,7 @@ function App() {
   const toggleTemperature = async () => {
     setIsCelsius(!isCelsius);
     
-    // Agar data hai to units change karke new data fetch karo
+    
     if (data.name) {
       try {
         const units = !isCelsius ? 'metric' : 'imperial';
